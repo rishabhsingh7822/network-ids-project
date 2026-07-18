@@ -1,9 +1,13 @@
 import numpy as np
+# pyrefly: ignore [missing-import]
 import joblib
 import logging
 from pathlib import Path
+# pyrefly: ignore [missing-import]
 from fastapi import FastAPI, HTTPException
+# pyrefly: ignore [missing-import]
 from fastapi.middleware.cors import CORSMiddleware
+# pyrefly: ignore [missing-import]
 from pydantic import BaseModel
 from typing import Optional
 from datetime import datetime
@@ -150,5 +154,6 @@ async def stats():
     }
 
 if __name__ == '__main__':
+    # pyrefly: ignore [missing-import]
     import uvicorn
     uvicorn.run("main:app", host="0.0.0.0[IP_ADDRESS]", port=8080, reload=True)

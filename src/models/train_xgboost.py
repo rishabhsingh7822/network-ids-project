@@ -1,8 +1,11 @@
 import numpy as np
+# pyrefly: ignore [missing-import]
 import joblib
 import logging
+# pyrefly: ignore [missing-import]
 import optuna
 from pathlib import Path
+# pyrefly: ignore [missing-import]
 from xgboost import XGBClassifier
 from sklearn.metrics import (
     accuracy_score, f1_score, classification_report
@@ -69,6 +72,7 @@ def train_xgboost():
     logger.info("Training final XGBoost with best params...")
     best_params = study.best_params
     best_params.update({
+        'use_label_encoder': False,
         'eval_metric': 'mlogloss',
         'random_state': 42,
         'n_jobs': -1,
